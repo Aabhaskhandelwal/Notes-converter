@@ -67,3 +67,14 @@ from my_agent.agent import root_agent
 # The agent is ready to use
 # Add your implementation here to interact with the agent
 ```
+
+## My Implementation
+
+```Input: YouTube URL
+↓
+Transcript Fetcher (tool)
+↓
+Notes Agent (LLM)
+↓
+Structured Notes (Markdown)
+```

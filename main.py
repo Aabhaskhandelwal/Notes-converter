@@ -1,6 +1,12 @@
-def main():
-    print("Hello from agent-for-resume-30-mins!")
+from my_agent.agent import notes_agent
+from tools.youtube import get_transcript
 
+video_id = "VIDEO_ID_HERE"
 
-if __name__ == "__main__":
-    main()
+transcript = get_transcript(video_id)
+
+response = notes_agent.run(
+    input=f"Create structured notes from this transcript:\n{transcript}"
+)
+
+print(response.output)
