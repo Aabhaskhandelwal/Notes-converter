@@ -1,12 +1,18 @@
-from my_agent.agent import notes_agent
-from tools.youtube import get_transcript
+from my_agent.agent import youtube_notes_agent
+from my_agent.tools.youtube import fetch_transcript
 
-video_id = "VIDEO_ID_HERE"
 
-transcript = get_transcript(video_id)
+def youtube_to_notes(video_id: str):
+    transcript = fetch_transcript(video_id)
 
-response = notes_agent.run(
-    input=f"Create structured notes from this transcript:\n{transcript}"
-)
+    response = youtube_notes_agent.run(
+        input=f"Generate study notes from this transcript:\n{transcript}"
+    )
 
-print(response.output)
+    return response.output
+
+
+if __name__ == "__main__":
+    video_id = "dQw4w9WgXcQ"
+    notes = youtube_to_notes(video_id)
+    print(notes)
