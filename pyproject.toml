@@ -1,5 +1,5 @@
 [project]
-name = "agent-for-resume-30-mins"
+name = "agent"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
